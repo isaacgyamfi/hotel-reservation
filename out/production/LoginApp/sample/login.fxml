@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="470.0" maxWidth="320.0" minHeight="470.0" minWidth="320.0" prefHeight="470.0" prefWidth="320.0" style="-fx-background-color: #e7ebf0;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Login">
+   <children>
+      <Text layoutX="118.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" textAlignment="CENTER" wrappingWidth="80.443359375" AnchorPane.bottomAnchor="416.470703125" AnchorPane.leftAnchor="118.0" AnchorPane.rightAnchor="121.556640625" AnchorPane.topAnchor="13.626953125">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#2bb5e8" />
+                  <Stop color="#2bb5e8" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill></Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f3f500" height="262.0" layoutX="34.0" layoutY="108.0" stroke="#2ccff487" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="2.0" width="252.0" />
+      <Circle fill="#2ccff4" layoutX="160.0" layoutY="108.0" radius="31.0" stroke="#00000002" strokeType="INSIDE" />
+      <PasswordField fx:id="pwdText" layoutX="56.0" layoutY="246.0" prefHeight="34.0" prefWidth="205.0" />
+      <TextField fx:id="emailText" layoutX="57.0" layoutY="172.0" prefHeight="34.0" prefWidth="205.0" />
+      <Button fx:id="btn_login" layoutX="86.0" layoutY="292.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="25.0" prefWidth="145.0" text="Login" textAlignment="CENTER" textFill="#338da1" textOverrun="CLIP">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="42.0" fitWidth="49.0" layoutX="139.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-customer-80.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="56.0" layoutY="144.0" prefHeight="17.0" prefWidth="55.0" text="Email">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#2bb5e8" />
+                  <Stop color="#2bb5e8" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill></Label>
+      <Label layoutX="56.0" layoutY="222.0" prefHeight="17.0" prefWidth="87.0" text="Password">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#2bb5e8" />
+                  <Stop color="#2bb5e8" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill></Label>
+      <Text fill="#187d8c" layoutX="115.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No account?" wrappingWidth="86.99999570846558">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="btn_signup" layoutX="56.0" layoutY="401.0" mnemonicParsing="false" onAction="#handleSignUp" prefHeight="30.0" prefWidth="205.0" text="Sign Up here" textFill="#187d8c">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Text fx:id="feedback" layoutX="37.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="245.00000762939453">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
