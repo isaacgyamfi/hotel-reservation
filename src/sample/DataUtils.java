@@ -13,4 +13,6 @@ public class DataUtils {
     {
         lastEmail = email;
     }
+    public static void closeLogin() {
+    }
 }

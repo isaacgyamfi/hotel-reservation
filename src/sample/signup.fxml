@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
@@ -84,7 +86,14 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <ComboBox fx:id="gender" layoutX="53.0" layoutY="204.0" prefHeight="31.0" prefWidth="284.0" />
+      <ComboBox fx:id="gender" layoutX="53.0" layoutY="204.0" prefHeight="31.0" prefWidth="284.0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Male" />
+               <String fx:value="Female" />
+            </FXCollections>
+         </items>
+      </ComboBox>
       <DatePicker fx:id="dob" layoutX="411.0" layoutY="204.0" prefHeight="31.0" prefWidth="284.0" />
       <TextField fx:id="su_email" layoutX="53.0" layoutY="275.0" prefHeight="31.0" prefWidth="284.0" />
       <Label layoutX="53.0" layoutY="247.0" text="Email">
@@ -155,7 +164,7 @@
          </textFill>
       </Label>
       <TextField fx:id="other_phone" layoutX="410.0" layoutY="412.0" prefHeight="31.0" prefWidth="284.0" />
-      <CheckBox layoutX="36.0" layoutY="643.0" mnemonicParsing="false" text="Please check this box to agree to the terms and conditions" />
+      <CheckBox fx:id="tnChchecked" layoutX="36.0" layoutY="643.0" mnemonicParsing="false" text="Please check this box to agree to the terms and conditions" />
       <Button fx:id="create_acc_btn" layoutX="516.0" layoutY="633.0" mnemonicParsing="false" onAction="#handleCreateBtn" style="-fx-background-color: #368efb;" text="Create Account" textFill="WHITE">
          <font>
             <Font size="16.0" />

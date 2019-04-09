@@ -28,8 +28,6 @@ public class Reservation extends Main implements Initializable {
     public ComboBox priceComboBox;
     public ToggleGroup hotelRideRadioBtnToggle;
 
-    // Display email from the Login class in the label "user_email"
-    Login login = new Login();
 
     // Enable user to make changes to profile
     public void handleChangProfile(ActionEvent actionEvent) {
@@ -42,7 +40,7 @@ public class Reservation extends Main implements Initializable {
 
 //    Enable user to filter the hotel listings using the specified data
     public void handleFilter(ActionEvent actionEvent) {
-        hotelRideRadioBtnToggle.getSelectedToggle();
+//        hotelRideRadioBtnToggle.getSelectedToggle();
     }
 
     public void handleCityComboBox(ActionEvent actionEvent) {
@@ -52,6 +50,7 @@ public class Reservation extends Main implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         // get the values from Login to display in reservation
         user_email.setText(DataUtils.getLastEmail());
+
     }
 }
 

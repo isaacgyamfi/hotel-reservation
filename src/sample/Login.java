@@ -1,6 +1,5 @@
 package sample;
 
-import com.sun.xml.internal.bind.v2.TODO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,13 +9,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-import java.awt.*;
-import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class Login extends Main{
     public TextField emailText;
@@ -26,15 +23,23 @@ public class Login extends Main{
     public Button btn_signup;
 
 
-
     //Event to handle login
-    public void handleLogin(ActionEvent actionEvent) throws IOException {
+    public void handleLogin(ActionEvent actionEvent) throws Exception {
+        // check if the email and password exists and match
+
+        String user = "myuser";
+        String url = "jdbc:mysql://localhost:3306/reservationapp";
+        String password = "ghana";
+        Connection conn = DriverManager.getConnection(url, user, password);
+
         String email = emailText.getText();
         String pwd = pwdText.getText();
         // Condition to check the email and password input
         if (email.equals("ghana@mail.com") && pwd.equals("1234")) {
             feedback.setText("Successful...logging in");
+            btn_login.setText("Logging in...");
             openReservation();
+
         }
         else if (email.isEmpty() && pwd.isEmpty()) {
             feedback.setText("Input fields are empty");
@@ -53,8 +58,6 @@ public class Login extends Main{
     // ActionEvent to open signup page
     public void handleSignUp(ActionEvent actionEvent) {
         try {
-//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("signup.fxml"));
-//            Parent root = (Parent)fxmlLoader.load();
             Parent root = FXMLLoader.load(getClass().getResource("signup.fxml"));
             Stage signupStage = new Stage();
             signupStage.setScene(new Scene(root, 800, 680));
@@ -69,7 +72,7 @@ public class Login extends Main{
     }
 
     // open reservation when the login is successful
-    public void openReservation() throws IOException {
+    public void openReservation() throws Exception {
 
         DataUtils.setLastEmail(emailText.getText());
         Parent reservationRoot = FXMLLoader.load(getClass().getResource("reservation.fxml"));
@@ -78,6 +81,6 @@ public class Login extends Main{
         reservationStage.setTitle("Reserve a hotel");
         reservationStage.setResizable(false);
         reservationStage.show();
-        String tel = "33";
+
     }
 }
